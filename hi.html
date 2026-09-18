@@ -1,21 +1,176 @@
-faisfhasfps]faisfhasfpsa
-sf
-<a href="a
-sf
-f
-afs
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep learning-derived orthogonal minimum joint space width</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- MathJax for rendering LaTeX math formulas -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { color: #1e3a8a; } /* Tailwind blue-900 */
+        .paper-content p { margin-bottom: 1rem; line-height: 1.7; color: #374151; }
+        .paper-content h2 { font-size: 1.5rem; font-weight: bold; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; }
+        .paper-content h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 p-6 md:p-12">
 
+    <article class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg">
+        
+        <!-- Header Section -->
+        <header class="mb-10 text-center">
+            <p class="text-sm text-gray-500 mb-2">Received: 19 September 2025 | Accepted: 30 October 2025 | DOI: 10.1002/ksa.70227</p>
+            <p class="text-sm font-semibold text-blue-700 mb-4">Knee Surgery, Sports Traumatology, Arthroscopy (WILEY)</p>
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">Deep learning-derived orthogonal minimum joint space width improves radiographic assessment of knee osteoarthritis severity and progression</h1>
+            
+            <div class="text-md text-gray-700 mb-4">
+                <strong>Do Weon Lee¹ | Dae Seok Song² | Yong Seuk Lee³ | Ja-Young Choi⁴,⁵ | Du Hyun Ro²,⁶,⁷,⁸</strong>
+            </div>
+            
+            <div class="text-xs text-gray-500 text-left space-y-1 mx-auto max-w-2xl bg-gray-100 p-4 rounded">
+                <p>¹ Department of Orthopedic Surgery, Dongguk University Ilsan Hospital, Goyang, South Korea</p>
+                <p>² CONNECTEVE Co., Ltd, Seoul, South Korea</p>
+                <p>³ Department of Orthopedic Surgery, Seoul National University Bundang Hospital, South Korea</p>
+                <p>⁴ Department of Radiology, Seoul National University Hospital, Seoul, South Korea</p>
+                <p>⁵ Department of Radiology, Seoul National University College of Medicine, Seoul, South Korea</p>
+                <p>⁶ Department of Orthopedics, Seoul National University College of Medicine, Seoul, South Korea</p>
+                <p>⁷ Department of Orthopedic Surgery, Seoul National University Hospital, Seoul, South Korea</p>
+                <p>⁸ Healthcare Al Research Institute, Seoul National University Hospital, Seoul, South Korea</p>
+                <p class="mt-2"><strong>Correspondence:</strong> Du Hyun Ro (duhyunro@gmail.com)</p>
+            </div>
+        </header>
 
-"></a>fafmnasf
-afas
-f
-as
-f
-asfa
-sf
-as
-fasf
-af
-s
-f
-a
+        <section class="paper-content">
+            <!-- Abstract -->
+            <div class="bg-blue-50 border-l-4 border-blue-800 p-6 mb-8 rounded">
+                <h2 class="!mt-0 !pt-0 !border-none">Abstract</h2>
+                <p><strong>Purpose:</strong> To evaluate the performance of a novel orthogonal minimum joint space width, defined as the narrowest distance measured orthogonally to the tibial joint line within a standardised medial axis, for detecting and monitoring knee osteoarthritis progression. This artificial intelligence-derived metric, obtained through deep learning, was compared with conventional fixed-location joint space width measures.</p>
+                <p><strong>Methods:</strong> A total of 15,313 knee radiographs from the Osteoarthritis Initiative (OAI), spanning baseline to 72-month follow-up, were analysed in this retrospective cohort study. Orthogonal minimum joint space width was automatically measured using a deep learning model. Discriminative ability for cross-sectional joint space narrowing severity was assessed using the area under the receiver operating characteristic curve. Longitudinal responsiveness was evaluated with the standardised response mean and relative standardised response mean, computed from pooled 12-month intervals and stratified by baseline narrowing grade. Variability was estimated through 1000 bootstrap resamples. Performance was compared with fixed-location measures at 22.5% and 25.0% from the medial edge of the tibial plateau.</p>
+                <p><strong>Results:</strong> Orthogonal minimum joint space width demonstrated strong discriminative performance, with area under the curve values of 0.86, 0.95 and 0.97 for joint space narrowing greater than grades 0, 1 and 2, respectively - exceeding the corresponding values for fixed-location measures by absolute margins of 0.04-0.08. Pooled relative standardised response mean analysis showed consistently higher responsiveness for orthogonal minimum joint space width, with median values of 0.97, 0.95 and 0.91 for baseline narrowing grades 0, 1 and 2, representing approximately 2%-4% greater responsiveness than fixed-location measures across all strata.</p>
+                <p><strong>Conclusions:</strong> Orthogonal minimum joint space width, automatically quantified by deep learning, enhances both sensitivity and specificity for assessing knee osteoarthritis severity and progression. This metric may serve as a robust and reproducible structural imaging endpoint for clinical trials and longitudinal research.</p>
+                <p class="text-sm mt-4"><strong>Level of Evidence:</strong> Level II.<br>
+                <strong>Keywords:</strong> biomarkers, deep learning, joint space width, knee osteoarthritis, radiography</p>
+            </div>
+
+            <h2>Introduction</h2>
+            <p>An estimated 528 million individuals are living with osteoarthritis (OA) [25] (with the knee being the most frequently affected joint) and is a leading cause of pain and disability in older adults [13]. With aging populations and rising obesity, the burden of knee OA continues to increase [14], underscoring the need for more effective interventions and metrics to monitor disease progression.</p>
+            <p>Radiographic assessment of joint space width (JSW) remains a widely accepted surrogate marker for evaluating cartilage thickness and monitoring OA progression due to its accessibility, low cost and extensive validation in clinical research [4, 6]. Traditional JSW measurements include the minimum joint space width (mJSW), which captures the narrowest distance between joint line curves [9], and fixed-location JSW (fJSW) metrics such as JSW225 and JSW250, defined at 22.5% and 25.0% from the medial edge of the femoral condyle [8, 18]. While mJSW reflects the point of maximal cartilage loss, it is limited by poor responsiveness in advanced stages of knee OA [20]. Conversely, fixed-location measurements have demonstrated greater longitudinal sensitivity [18], particularly in higher Kellgren-Lawrence (KL) grades, but may fail to capture individual-specific anatomical variability and may miss the true site of maximal narrowing.</p>
+            <p>Recent advances in artificial intelligence (Al), particularly deep learning techniques, have enabled fully automated and reproducible assessments of JSW [15, 17]. These models reduce inter-reader variability and enhance detection of structural changes, especially when applied to standardised anatomical landmarks. However, the suggested parameters have not been validated in a longitudinal dataset for its responsiveness nor have been compared with the previous measurable JSW parameters such as mJSW or fJSW.</p>
+            <p>To overcome these limitations, the authors devised a novel Al-derived metric orthogonal minimum joint space width (oJSW) - measured using a convolutional neural network (CNN) that automatically identifies the narrowest point within a predefined medial tibiofemoral region. This Al-based approach provides automated, and reproducible measurements, minimising observer variability and geometric inconsistencies present in manual or fixed-location methods.</p>
+            <p>The primary objective of this study was to evaluate the discriminative performance and longitudinal responsiveness of oJSW in comparison to established fJSW metrics (JSW225 and JSW250), using data from the Osteoarthritis Initiative (OAI) [19]. It was hypothesised that oJSW would demonstrate superior sensitivity in distinguishing JSN severity and greater responsiveness to structural progression over time.</p>
+
+            <h2>Methods</h2>
+            <h3>Study design and dataset</h3>
+            <p>This retrospective cohort analysis utilised data from the OAI, comprising 15,313 fixed-flexion posteroanterior knee radiographs from 3,855 participants obtained from baseline up to the 72-month follow-up visits. Radiographs were included if corresponding medial joint space narrowing grades and metadata (age, sex, body mass index [BMI] and Kellgren-Lawrence grade [KLG]) were available. Images with incomplete data or inadequate quality were excluded. Each participant contributed one or both knees across multiple time points, allowing longitudinal assessment of structural change.</p>
+            
+            <h3>JSW measurement and structural outcomes</h3>
+            <p>The primary imaging marker, oJSW, was measured using a deep learning-based automated pipeline developed and validated in-house. This CNN-based system identifies the narrowest medial tibiofemoral joint space width along a fixed axis. The entire process is end-to-end and requires only input radiographs, without manual annotation or adjustment.</p>
+
+            <h3>Al-based measurement pipeline</h3>
+            <p>The pipeline comprises two major components: keypoint detection and anatomical joint line segmentation.</p>
+            <ol class="list-decimal pl-6 mb-4 space-y-2">
+                <li><strong>Keypoint Detection for Tibial Joint Boundaries:</strong> A modified DEKR (Deformable Keypoint Regression) model [10], initially designed for human pose estimation, was adapted and trained on annotated knee radiographs to detect the medial and lateral endpoints of the tibial joint line. These endpoints establish a normalised horizontal axis (0-1) across the tibial plateau.</li>
+                <li><strong>Medial and Lateral Zone Definition:</strong> Using the normalised coordinate system, two fixed zones were defined:
+                    <ul class="list-disc pl-6 mt-1">
+                        <li>Medial region: $x=0.000-0.275$</li>
+                        <li>Lateral region: $x=0.725-1.000$</li>
+                    </ul>
+                </li>
+                <li><strong>Joint Line Segmentation:</strong> Independent U-Net architectures [23] were trained to segment the femoral and tibial joint lines. The resulting segmentation outputs - femur_joint_line and tibia_joint_line provided the vertical (y-axis) coordinates needed for JSW calculation.</li>
+                <li><strong>oJSW Calculation:</strong> For each discrete x-coordinate within the defined medial and lateral zones:
+                    <ul class="list-disc pl-6 mt-1">
+                        <li>The algorithm checked whether both femoral and tibial segmentation lines provided valid y-values at that x-position.</li>
+                        <li>If valid, the vertical distance between the femur and tibia lines (i.e., $JSW=tibia_y-femur_y$) was computed.</li>
+                        <li>The minimum JSW encountered across each zone was retained as the oJSW for that compartment (medial or lateral).</li>
+                    </ul>
+                </li>
+                <li><strong>Knee Laterality Handling:</strong> To ensure accurate compartment classification, the system identified knee laterality from the DICOM metadata or filename heuristics. For left knees, the 0-0.275 region was classified as medial and 0.725-1 as lateral; the opposite convention was used for right knees.</li>
+            </ol>
+
+            <h3>Structural outcome</h3>
+            <p>Medial JSN was graded using the Osteoarthritis Research Society International (OARSI) atlas criteria [1]. For cross-sectional discriminative analysis, JSN was dichotomised at three thresholds: $JSN &gt; 0$, $JSN &gt; 1$ and $JSN &gt; 2$. Longitudinal progression was assessed by calculating 12-month changes in JSW ($\Delta JSW$) and corresponding changes in JSN grade ($\Delta JSN$) across consecutive time intervals (0-12, 12-24, 24-36 and 36-48 months).</p>
+
+            <h3>Statistical analysis</h3>
+            <p>Discriminative performance was assessed using receiver operating characteristic (ROC) analysis, with the area under the curve (AUC) computed to evaluate the ability of each JSW metric to distinguish JSN severity thresholds ($JSN &gt; 0, &gt; 1, &gt; 2$). Pairwise comparisons of AUCs between metrics were conducted using the DeLong test. Longitudinal responsiveness was quantified using the standardised response mean (SRM), defined as the mean change in 12-month $\Delta JSW$ divided by its standard deviation. Relative responsiveness was evaluated using the relative SRM (rSRM), calculated as $SRM_1/(SRM_1+SRM_0)$ where $SRM_1$ is SRM for $\Delta JSN=1$ and $SRM_0$ is SRM for $\Delta JSN=0$. rSRMs were derived from $\Delta JSW$ values pooled across consecutive 12-month intervals (e.g., 0-12, 12-24, 24-36, 36-48 months), but stratified by baseline JSN grade. Bootstrap resampling with 1000 iterations was used to estimate 95% confidence intervals and assess variability. All analyses were performed using Python (version 3.10).</p>
+
+            <h2>Results</h2>
+            <p>The analysis included 15,313 knee radiographs from 3,855 unique participants, spanning baseline and follow-up visits. The mean age at baseline was $60.9 \pm 11.0$ years, and 57.9% of participants were female. The mean BMI was $28.7 \pm 4.7 \text{ kg/m}^2$. The distribution of Kellgren-Lawrence (KLG) grades at baseline is shown in Table 1.</p>
+
+            <div class="my-6 overflow-x-auto">
+                <table class="min-w-full bg-white border border-gray-300">
+                    <caption class="text-left font-semibold text-gray-700 mb-2">Table 1: Demographic information of the individuals included in the study at baseline.</caption>
+                    <thead>
+                        <tr class="bg-gray-100 border-b border-gray-300">
+                            <th class="py-2 px-4 text-left font-semibold text-sm">Variable</th>
+                            <th class="py-2 px-4 text-left font-semibold text-sm">$N=3855$</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 px-4 text-gray-700">Age (years)</td>
+                            <td class="py-2 px-4 text-gray-700">60.9 (11.0)</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 px-4 text-gray-700">Female (%)</td>
+                            <td class="py-2 px-4 text-gray-700">57.9%</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 px-4 text-gray-700">BMI ($kg/m^2$)</td>
+                            <td class="py-2 px-4 text-gray-700">28.7 (4.7)</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 bg-gray-50">
+                            <td colspan="2" class="py-2 px-4 font-semibold text-gray-700">KLG</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 px-4 pl-8 text-gray-700">0</td>
+                            <td class="py-2 px-4 text-gray-700">880 (22.8%)</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 px-4 pl-8 text-gray-700">1</td>
+                            <td class="py-2 px-4 text-gray-700">590 (15.3%)</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 px-4 pl-8 text-gray-700">2</td>
+                            <td class="py-2 px-4 text-gray-700">1493 (38.7%)</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 px-4 pl-8 text-gray-700">3</td>
+                            <td class="py-2 px-4 text-gray-700">743 (19.3%)</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 px-4 pl-8 text-gray-700">4</td>
+                            <td class="py-2 px-4 text-gray-700">149 (3.9%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Discriminative performance</h3>
+            <p>The oJSW demonstrated superior discriminative ability compared to JSW225 and JSW250 in differentiating medial JSN severity thresholds. For $JSN &gt; 0$, the area under the ROC curve (AUC) for oJSW was 0.86, compared to 0.81 for JSW225 and 0.78 for JSW250. At higher thresholds, AUCs were 0.95 (oJSW), 0.91 (JSW225) and 0.88 (JSW250) for $JSN &gt; 1$ and 0.97 (oJSW), 0.95 (JSW225) and 0.93 (JSW250) for $JSN &gt; 2$. ROC curves consistently demonstrated stronger discriminative performance of oJSW across all thresholds. Pairwise DeLong tests confirmed the statistical superiority of oJSW versus JSW225 ($\Delta AUC=0.053, 0.043$ and 0.016, respectively) and JSW250 ($\Delta AUC=0.075$, 0.068 and 0.031; all $p &lt; 0.001$).</p>
+            <p>Quantile distributions of $\Delta JSW$, pooled across 12-month intervals and stratified by baseline JSN grade and $\Delta JSN$, further supported these findings. For oJSW, the median change declined stepwise with progression: from 0.00 ($\Delta JSN=0$) to -0.70 ($\Delta JSN=1$) and -1.90 ($\Delta JSN=2$). Compared to JSW225 and JSW250, oJSW showed the most consistent and pronounced gradient in both median and interquartile range.</p>
+
+            <h3>Longitudinal responsiveness</h3>
+            <p>Twelve-month standardised response means (SRMs) for $\Delta oJSW$, $\Delta JSW225$ and $\Delta JSW250$, stratified by baseline JSN and $\Delta JSN$, are presented. In knees without structural progression ($\Delta JSN=0$) SRMs were low and near zero for all metrics. Among knees with mild progression ($\Delta JSN=1$), oJSW showed strong responsiveness ($SRM=-1.10$), comparable to JSW225 (-1.49) and JSW250 (-1.35). In more advanced cases ($\Delta JSN=2$), all three metrics exhibited high SRMs, with JSW225 showing the largest value ($SRM=-3.08$) among knees with baseline $JSN=0$.</p>
+            <p>Relative responsiveness, assessed using bootstrapped relative SRM (rSRM) from pooled 12-month intervals, consistently favoured oJSW. Stratified rSRMs for oJSW were 0.97, 0.95 and 0.91 for baseline JSN grades 0, 1 and 2, respectively, exceeding those of JSW225 (0.95, 0.92 and 0.89) and JSW250 (0.94, 0.92 and 0.89). oJSW showed numerically higher relative responsiveness than fixed-location metrics ($\Delta rSRM \approx 0.02-0.03$), but bootstrap comparisons did not reach statistical significance across strata (all $p &gt; 0.05$). These results demonstrate that oJSW maintained the highest relative SRM across all JSN grades, indicating greater specificity to true structural progression compared to JSW225 and JSW250.</p>
+
+            <h2>Discussion</h2>
+            <p>Compared to standard fixed-location measurements (JSW225, JSW250), oJSW demonstrated superior discriminative validity for JSN grades and greater specificity to longitudinal structural changes. These results suggest that oJSW offers advantages as a responsive, patient-specific imaging endpoint in both clinical research and practice.</p>
+            <p>The superior performance of oJSW stems from its methodology. Traditional fixed-location metrics measure JSW at predefined points (typically 22.5% or 25% from the medial tibial edge) [18]. Although standardised and reproducible, this assumes uniform disease distribution, which does not reflect the anatomical and pathological variability seen in clinical osteoarthritis populations [16]. Because OA often progresses asymmetrically especially in varus or valgus knees fixed-point measures may miss the true site of maximal cartilage loss, underestimating severity. In contrast, oJSW uses a deep learning-based approach to automatically identify the narrowest joint space within a defined medial region (0%-27.5% of the tibial plateau), combining the individualised sensitivity of mJSW with the standardisation of a fixed anatomical zone [18]. Unlike earlier mJSW techniques requiring manual or semi-automated tracing prone to observer variability [9], the deep learning model provides a fully automated, reproducible solution applicable at scale.</p>
+            <p>The discriminative performance of oJSW (AUC 0.86-0.97) is comparable to the reproducibility of expert OARSI JSN grading (intra-rater $k \approx 0.86$; inter-rater $K \approx 0.73$ [7]). Thus, even the lower bound of oJSW performance approximates the reliability limit of manual assessment. While an AUC of 0.86 may seem modest, it matches human-level discrimination and achieves this automatically and reproducibly, eliminating observer variability and enhancing standardisation across datasets.</p>
+            <p>One limitation of minimum JSW in advanced OA is the floor effect once the joint space reaches zero (bone-on-bone contact), further narrowing cannot be detected even if cartilage loss continues elsewhere. In this study, oJSW frequently reached zero in KL grade 4 knees, limiting its ability to capture additional progression. Fixed-location measures, positioned slightly lateral to the contact point, continued to show measurable change, yielding marginally higher absolute SRMs in advanced cases but also greater variability in stable knees, indicating higher noise. The rSRM highlighted this distinction: oJSW achieved values of 0.97, 0.95 and 0.91 for baseline JSN grades 0, 1 and 2, respectively, exceeding JSW225 (0.95, 0.92 and 0.89) and JSW250 (0.94, 0.92 and 0.89). This consistently higher rSRM supports superior signal-to-noise performance across OA severities. These results extend prior work [18], favouring fixed-location JSW over traditional mJSW in moderate OA, where central cartilage remains. By adaptively identifying the narrowest point within a defined medial region, oJSW combines the flexibility of mJSW with the reproducibility of fixed-location methods. Compared with the standardised JSW (stdJSW) proposed by Paixao et al. [20], which showed slightly lower rSRM in advanced disease (~0.87 at JSN grade 2), oJSW provides greater specificity for detecting meaningful progression in severe OA.</p>
+
+        </section>
+    </article>
+
+</body>
+</html>
